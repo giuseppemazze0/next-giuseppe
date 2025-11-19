@@ -14,8 +14,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: gray;
+    --foreground: black;
   }
 }
 
@@ -31,5 +31,10 @@ h1 {
 }
 
 h2 {
+  font-weight: bold;
+}
+
+li:hover {
+  text-decoration: underline;
   font-weight: bold;
 }
