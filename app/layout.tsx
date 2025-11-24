@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased
         
@@ -33,12 +33,10 @@ export default function RootLayout({
         `}
       >
         <header>
-          <h1>A minha App Next!</h1>
+          <h1 className="text-center text-4x1 font-bold">A minha App Next!</h1>
           <nav>
             <ul className="flex gap-10">
               <li><Link href="/">Intro</Link></li>
-              <li><Link href="/rota">Rota</Link></li>
-              <li><Link href="/sobre">Sobre</Link></li>
               <li><Link href="/projetos">Projetos</Link></li>
               <li><Link href="/tecnologias">Tecnologias</Link></li>
             </ul>

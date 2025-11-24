@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Orgulho from '@/components/Orgulho/Orgulho';
 
-export default function ComponenteProjetos() {
+export default function Projetos() {
     return (
         <>
             <h2>Projetos</h2>

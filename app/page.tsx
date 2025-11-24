@@ -1,5 +1,3 @@
-import Componente1 from '@/components/componente1/componente1'
-import Componente2 from '@/components/componente2/componente2'
 
 
 export default function page() {
@@ -15,8 +13,7 @@ export default function page() {
       </p>
       {frase}
       <p>{ano}</p>
-      <Componente1 />
-      <Componente2 />
+
     </div>
   )
 }

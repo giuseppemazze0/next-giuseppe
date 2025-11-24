@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: gray;
+    --background: rgba(128, 128, 128, 0.388);
     --foreground: black;
   }
 }
@@ -25,16 +25,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-  font-size: 2em;
-  font-weight: bold;
-}
-
 h2 {
   font-weight: bold;
 }
 
 li:hover {
   text-decoration: underline;
-  font-weight: bold;
 }
