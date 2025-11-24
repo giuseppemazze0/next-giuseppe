@@ -1,10 +1,5 @@
-import { url } from 'inspector';
 import Link from 'next/link';
-
-interface ProjetosProps {
-    nome: String
-    url: String
-}
+import Orgulho from '@/components/Orgulho/Orgulho';
 
 export default function Projetos() {
     return (

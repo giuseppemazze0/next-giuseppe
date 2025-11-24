@@ -33,7 +33,7 @@ export default function RootLayout({
           </nav>
         </header>
 
-        <main className="w-[600px] p-[30px] my-[10px] rounded-[10px] shadow-[5px_5px_6px_rgba(0,0,0,0.2)] bg-[#fff]">
+        <main className="w-[600px] p-[30px] my-[10px] rounded-[10px] shadow-[5px_5px_6px_rgba(0,0,0,0.2)]">
           {children}
         </main>
 

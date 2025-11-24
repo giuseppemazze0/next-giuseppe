@@ -1,5 +1,5 @@
-import Projetos from '@/components/Projetos/Projetos'
+import DescricaoProjetos from '@/components/DescricaoProjetos/DescricaoProjetos'
 
 export default function ProjetosPage() {
-    return <Projetos/>
+    return <DescricaoProjetos/>
 }

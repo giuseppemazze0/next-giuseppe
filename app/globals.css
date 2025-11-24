@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --fundo-main: rgba(128, 128, 128, 0.189);
+  --fundo-nav-li: #000000;
+  --cor-letra-nav-li: #ffffff;
 }
 
 @theme inline {
@@ -16,6 +19,9 @@
   :root {
     --background: rgba(128, 128, 128, 0.189);
     --foreground: black;
+    --fundo-main: #ffffff;
+    --fundo-nav-li: #ffffff;
+    --cor-letra-nav-li: #000000;
   }
 }
 
@@ -27,6 +33,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+main {
+  background-color: var(--fundo-main);
+}
+
+
+
 h2 {
   font-weight: bold;
 }
@@ -35,6 +47,7 @@ h2 {
 
 .nav-links li { 
   position: relative;
+  transition: color .8s ease-in-out;
 }
 .nav-links li::after {
   content: '';
@@ -44,8 +57,12 @@ h2 {
   left: -4px;
   width: 0;
   height: calc(100% + 6px);
-  background-color: white;
+  background-color: var(--fundo-nav-li);
   transition: width .6s ease-in-out;
+}
+
+.nav-links li:hover {
+  color: var(--cor-letra-nav-li);
 }
 .nav-links li:hover::after {
   width: calc(100% + 8px);
