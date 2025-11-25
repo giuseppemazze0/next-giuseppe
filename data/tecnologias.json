@@ -37,7 +37,7 @@
   },
   {
     "title": "API RESTful",
-    "image": "rest.svg",
+    "image": "rest.png",
     "description": "Padrão para criação de APIs baseado em recursos e métodos HTTP.",
     "rating": 4
   },
@@ -55,13 +55,13 @@
   },
   {
     "title": "GitHub Codespaces",
-    "image": "github.svg",
+    "image": "githubcode.svg",
     "description": "Ambiente de desenvolvimento remoto integrado com GitHub.",
     "rating": 4
   },
   {
     "title": "GitHub Pages",
-    "image": "github.svg",
+    "image": "githubpages.jpg",
     "description": "Serviço para alojar sites estáticos diretamente do repositório.",
     "rating": 4
   },

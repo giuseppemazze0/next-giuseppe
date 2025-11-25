@@ -1,6 +1,6 @@
 import MagiaDoJSX from '@/components/MagiaDoJSX/MagiaDoJSX'
 
-export default function Page() {
+export default function HomePage() {
   return (
     <div className="conteudo-main">
       <h2>Vejam o modelo das <span className="italic">Interfaces Modernas</span></h2>
