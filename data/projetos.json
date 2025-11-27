@@ -1,0 +1,37 @@
+[
+  {
+    "nome": "São Paulo",
+    "descricao": "No primeiro laboratório, escolhemos uma cidade para servir de base ao projeto. Foi aqui que tivemos nosso primeiro contato com a linguagem HTML e aprendemos a estruturar uma página web simples.",
+    "url": "https://giuseppemazze0.github.io/lab1/cidade/index.html"
+  },
+  {
+    "nome": "São Paulo",
+    "descricao": "No segundo laboratório, deixamos nossa página muito mais elegante com o uso de CSS. Exploramos seletores, estilização básica e começamos a construir um layout mais organizado.",
+    "url": "https://giuseppemazze0.github.io/lab2/cidade/index.html"
+  },
+  {
+    "nome": "São Paulo",
+    "descricao": "Para concluir essa trilogia da cidade, aprimoramos o projeto com todos os conhecimentos de HTML e CSS adquiridos ao longo do semestre, incluindo flexbox, grid, media queries e outras técnicas avançadas de layout.",
+    "url": "https://giuseppemazze0.github.io/lab3/cidade/index.html"
+  },
+  {
+    "nome": "Taberna DEISI",
+    "descricao": "Após dominar HTML e CSS, desenvolvemos nosso primeiro projeto utilizando JavaScript. Este laboratório ficou repleto de eventos interativos, desde acariciar um cachorro ao passar o mouse até caçar ratos para trocar moedas e gastar em bebidas, criando uma experiência divertida e dinâmica.",
+    "url": "https://giuseppemazze0.github.io/lab4/index.html"
+  },
+  {
+    "nome": "JavaScript",
+    "descricao": "No laboratório seguinte, continuamos a trabalhar com JavaScript, mas desta vez de forma mais simples. Implementamos eventos básicos para reforçar os conceitos de manipulação do DOM e interação com o usuário.",
+    "url": "https://giuseppemazze0.github.io/lab5/index.html"
+  },
+  {
+    "nome": "Lojinha.",
+    "descricao": "Neste laboratório, introduzimos o uso do LocalStorage. O objetivo era criar uma loja onde o utilizador pudesse visualizar produtos, selecionar itens e adicioná-los ao carrinho, mantendo esses dados armazenados localmente.",
+    "url": "https://giuseppemazze0.github.io/lab6/index.html"
+  },
+  {
+    "nome": "Lojinha.",
+    "descricao": "Sendo o último laboratório antes de avançarmos para React e Next.js, aprimoramos a loja tanto visualmente quanto em desempenho. Agora, os produtos exibidos passam a ser obtidos de uma API externa, e o visitante pode efetivamente realizar compras dentro do site.",
+    "url": "https://giuseppemazze0.github.io/lab7/index.html"
+  }
+]

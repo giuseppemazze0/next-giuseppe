@@ -9,8 +9,8 @@ interface ProjetoProps {
 
 export default function Projeto({index, nome, url, descricao}:ProjetoProps) {
     return (
-        <div className='p-[10px] my-[25px] rounded-[5px] hover:bg-blue-100 transition duration-400 ease-in-out'>
-            <h3 className='mb-[20px] font-bold text-[1.2em] text-center'>Laboratório {index} - {nome}</h3>
+        <div className='p-[10px] my-[25px] rounded-[5px] bg-blue-100 hover:bg-blue-400 transition duration-400 ease-in-out'>
+            <h3 className='mb-[20px] font-bold text-[1.2em] text-center'>Laboratório {index+1} - {nome}</h3>
 
             <p className='indent-[30px] text-justify'>
                 {descricao}
