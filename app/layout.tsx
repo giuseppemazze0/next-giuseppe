@@ -23,13 +23,14 @@ export default function RootLayout({
             A minha App React & Next.js!
           </h1>
           <nav>
-            <ul className="nav-links flex gap-10">
+            <ul className="nav-links flex flex-wrap justify-center gap-10 px-[20px]">
               <li><Link href="/">Intro</Link></li>
               <li><Link href="/sobre">Sobre</Link></li>
               <li><Link href="/caracteristicas">Caracteristicas</Link></li>
               <li><Link href="/tecnologias">Tecnologias</Link></li>
               <li><Link href="/projetos">Projetos</Link></li>
               <li><Link href="/contador">Contador</Link></li>
+              <li><Link href="/input">Input</Link></li>
             </ul>
           </nav>
         </header>
