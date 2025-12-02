@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
+import Relogio from "@/components/Relogio/Relogio";
 
 export const metadata: Metadata = {
   title: "Giuseppe Mazzeo",
@@ -39,9 +40,12 @@ export default function RootLayout({
           {children}
         </main>
 
-        <footer className="flex justify-between font-bold w-[600px] px-[10px] py-[20px] italic text-[.7em]">
+        <footer className="flex justify-between items-end font-bold w-[600px] px-[10px] py-[20px] italic text-[.7em]">
           <p>Universidade Lusófona © {data.getFullYear()}</p>
-          <p>Desenvolvimento de Interfaces Web</p>
+          <div className="flex flex-col items-center">
+            <Relogio />
+            <p>Desenvolvimento de Interfaces Web</p>
+          </div>
           <p>Giuseppe Mazzeo</p>
         </footer>
       </body>
