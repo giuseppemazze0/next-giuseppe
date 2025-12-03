@@ -1,4 +1,4 @@
-import TecnologiaDetailsCard from '@/components/TecnologiaDetailsCard/TecnologiaDetailsCard' 
+import TecnologiaDetailsCard from '@/components/Tecnologia/DetailsCard' 
 
 export default function TecnologiaPage() {
     return (

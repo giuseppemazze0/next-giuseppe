@@ -12,7 +12,7 @@ export default function TecnologiaCard({title, image}: TecnologiaCardProps) {
                 <Image src={`/tecnologias/${image}`} alt={`Logo ${title}`} fill style={{objectFit: 'contain'}}></Image>
             </figure>
 
-            <h2 className="text-[1.5em]">
+            <h2 className="z-1 text-[1.5em]">
                 {title}
             </h2>
         </>

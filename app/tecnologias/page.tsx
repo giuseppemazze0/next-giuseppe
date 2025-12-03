@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Tecnologia from '@/components/Tecnologia/Tecnologia'
 import tecnologias from '@/data/tecnologias.json'
 
@@ -9,10 +8,8 @@ export default function TecnologiasPage() {
 
             <div className='flex flex-wrap justify-center'>
                 {tecnologias.map((tecnologia, index) => (
-                    <Link key={`tecno-${index}`} href={`/tecnologias/${index}`}>
-                        <Tecnologia key={`tecno-${index}`} image={tecnologia.image} title={tecnologia.title} description={tecnologia.description} rating={tecnologia.rating}/>
-                    </Link>
-                    ))}
+                    <Tecnologia key={`tecno-${index}`} image={tecnologia.image} title={tecnologia.title} description={tecnologia.description} rating={tecnologia.rating} index={index}/>
+                ))}
             </div>
         </>
     )

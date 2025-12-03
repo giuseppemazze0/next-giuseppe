@@ -47,8 +47,6 @@ export default function Input() {
     function alterarCorFundo(e: any) {
         const valor = e.target.value
 
-        console.log()
-
         switch(valor) {
             case 'tecnologia':
                 definirCorFundo(valor, 'bg-purple-500')
