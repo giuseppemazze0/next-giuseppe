@@ -1,14 +1,28 @@
 import Tecnologia from '@/components/Tecnologia/Tecnologia'
-import tecnologias from '@/data/tecnologias.json'
+import tecnologiaDados from '@/data/tecnologias.json'
 
 export default function TecnologiasPage() {
     return(
         <>
-            <h2 className=' text-center mb-[30px] text-[1.5em]'>Tecnologias Exploradas</h2>
+            <h1 className='font-bold text-[2em] text-center'>
+                Tecnologias Exploradas
+            </h1>
+
+            <p className='mt-[30px] mb-[60px] text-justify'>
+                <span className='block indent-[20px]'>
+                    Durante este semestre, tive a oportunidade de explorar um conjunto de tecnologias fundamentais para o desenvolvimento web moderno. Cada uma delas contribuiu para ampliar minha compreensão sobre como aplicações são estruturadas, estilizadas, dinamizadas e publicadas.
+                </span>
+                <span className='block indent-[20px]'>
+                    Através do estudo de linguagens de marcação, estilos, programação, APIs, ferramentas de versionamento e frameworks avançados, desenvolvi uma base sólida para criar projetos mais completos, organizados e profissionais.
+                </span>
+                <span className='block indent-[20px]'>
+                    A seguir, apresento as principais tecnologias que estudei ao longo deste período, juntamente com uma breve descrição e o nível de domínio alcançado em cada uma.
+                </span>
+            </p>
 
             <div className='flex flex-wrap justify-center'>
-                {tecnologias.map((tecnologia, index) => (
-                    <Tecnologia key={`tecno-${index}`} image={tecnologia.image} title={tecnologia.title} description={tecnologia.description} rating={tecnologia.rating} index={index}/>
+                {tecnologiaDados.map((tecnologia, index) => (
+                    <Tecnologia key={`tecno-${index}`} image={tecnologia.image} title={tecnologia.title} rating={tecnologia.rating} index={index}/>
                 ))}
             </div>
         </>

@@ -1,0 +1,130 @@
+[
+  {
+    "titulo": "JSX – sintaxe que mistura HTML e JS",
+    "apresentacao": "JSX é uma sintaxe que permite escrever HTML dentro do JavaScript, usada no React.",
+    "exemplo": "\nconst Greeting = () => {\n  const name = \"Alice\";\n  return <h1>Olá, {name}!</h1>;\n};",
+    "explicacao": "JSX facilita a criação de componentes de forma declarativa. Ele é convertido em React.createElement pelo Babel para ser interpretado pelo navegador. Permite inserir variáveis ou expressões diretamente no markup com {}.",
+    "vantagens": [
+      "Sintaxe declarativa clara",
+      "Integração de lógica JavaScript no markup",
+      "Facilita a manutenção e leitura do código"
+    ],
+    "quandoUsar": "Sempre que for escrever componentes React, pois JSX é a forma padrão de estruturar a interface.",
+    "dicas": [
+      "Use {} para inserir variáveis ou expressões JS",
+      "Evite colocar muita lógica complexa dentro do JSX; prefira funções auxiliares"
+    ]
+  },
+  {
+    "titulo": "Componentes – funções que retornam JSX",
+    "apresentacao": "Um componente é uma função ou classe que retorna JSX, representando partes reutilizáveis da interface.",
+    "exemplo": "\nfunction Button({ label }) {\n  return <button>{label}</button>;\n}\n\nou\n\n<Button label=\"Clique aqui\" />",
+    "explicacao": "Existem componentes funcionais (recomendados atualmente) e de classe (mais antigos). Componentes permitem modularidade, reutilização e ajudam a organizar o código de forma clara.",
+    "vantagens": [
+      "Reutilização de código",
+      "Organização do projeto",
+      "Facilita testes unitários"
+    ],
+    "quandoUsar": "Sempre que precisar criar partes da interface que se repetem ou precisam ser isoladas para lógica própria.",
+    "dicas": [
+      "Prefira componentes funcionais com hooks",
+      "Use props para parametrizar componentes e torná-los reutilizáveis"
+    ]
+  },
+  {
+    "titulo": "Componentes Reutilizáveis e Modulares",
+    "apresentacao": "Construir interfaces a partir de blocos pequenos aumenta a manutenção e permite reutilização.",
+    "exemplo": "\nconst Card = ({ title, description }) => (\n  <div className=\"card\">\n    <h2>{title}</h2>\n    <p>{description}</p>\n  </div>\n);\n\nou\n\n<Card \ntitle=\"Produto 1\"\ndescription=\"Descrição do produto 1\" \n/>",
+    "explicacao": "Componentes modulares permitem código DRY (Don't Repeat Yourself), facilitam testes e manutenção de projetos grandes.",
+    "vantagens": [
+      "Código limpo e organizado",
+      "Facilidade de manutenção e atualização",
+      "Reutilização em diferentes partes do projeto"
+    ],
+    "quandoUsar": "Sempre que houver padrões de interface repetidos ou funcionalidades compartilhadas.",
+    "dicas": [
+      "Divida componentes grandes em menores",
+      "Mantenha responsabilidade única para cada componente"
+    ]
+  },
+  {
+    "titulo": "Roteamento Automático e APIs",
+    "apresentacao": "No Next.js, o roteamento é baseado na estrutura de pastas, e cada arquivo se torna uma rota automaticamente.",
+    "exemplo": "\npages/\n ├── index.js      // '/'\n ├── about.js      // '/about'\n └── blog/[id].js  // '/blog/:id'\n\n// API\nexport default function handler(req, res) {\n  res.status(200).json({ message: \"Olá mundo!\" });\n}",
+    "explicacao": "Roteamento automático permite criar rotas sem configuração extra. APIs podem ser criadas em 'pages/api', funcionando como endpoints backend, tudo dentro do Next.js.",
+    "vantagens": [
+      "Configuração mínima",
+      "Rotas dinâmicas e estáticas simples",
+      "Integração de frontend e backend no mesmo projeto"
+    ],
+    "quandoUsar": "Sempre que criar páginas ou endpoints de API no Next.js, aproveitando a estrutura de pastas.",
+    "dicas": [
+      "Use rotas dinâmicas com [param].js para URLs parametrizadas",
+      "Organize suas APIs em subpastas para manter o código limpo"
+    ]
+  },
+  {
+    "titulo": "Hooks: useState, useEffect e useSWR",
+    "apresentacao": "Hooks permitem gerenciar estado, efeitos colaterais e fetch de dados em componentes funcionais.",
+    "exemplo": "\nconst [count, setCount] = useState(0);\n<button onClick={() => setCount(count + 1)}>\n  Incrementar\n</button>\n\nuseEffect(() => {\n  console.log(\"Componente montado\");\n}, []);\n\nimport useSWR from 'swr';\nconst { data, error } = useSWR('/api/hello', fetcher);",
+    "explicacao": "useState gerencia estado; useEffect lida com efeitos colaterais como fetch ou timers; useSWR gerencia fetch de dados com cache automático e revalidação em background, reduzindo chamadas redundantes à API.",
+    "vantagens": [
+      "Hooks simplificam o gerenciamento de estado e efeitos",
+      "Permitem código funcional limpo",
+      "useSWR melhora performance de fetch de dados e caching"
+    ],
+    "quandoUsar": "Sempre em componentes funcionais para estado, efeitos colaterais e fetch de dados assíncronos.",
+    "dicas": [
+      "Evite usar useEffect para lógica síncrona simples; prefira usar diretamente no JSX",
+      "Use funções de atualização de estado (setState(prev => ...)) para evitar bugs de concorrência"
+    ]
+  },
+  {
+    "titulo": "Renderização Rápida e SEO Friendly",
+    "apresentacao": "Next.js permite renderização rápida e otimizada para SEO usando SSR, SSG ou ISR.",
+    "exemplo": "\n// SSR\nexport async function getServerSideProps() {\n  return { props: { data: \"Olá SSR!\" } };\n}\n\n// SSG\nexport async function getStaticProps() {\n  return { props: { data: \"Olá SSG!\" } };\n}",
+    "explicacao": "SSR gera HTML no servidor a cada requisição; SSG gera páginas estáticas em build time; ISR atualiza páginas estáticas periodicamente. Isso melhora SEO e performance inicial, porque buscadores recebem HTML pronto.",
+    "vantagens": [
+      "Melhor indexação por motores de busca",
+      "Performance inicial rápida",
+      "Flexibilidade entre estático e dinâmico"
+    ],
+    "quandoUsar": "Quando SEO e performance são prioridades, ou quando precisa renderizar conteúdo dinâmico.",
+    "dicas": [
+      "Prefira SSG para páginas estáticas e SSR para páginas que precisam de dados dinâmicos",
+      "Use ISR para páginas estáticas que precisam de atualização periódica"
+    ]
+  },
+  {
+    "titulo": "TypeScript – Seguro e Escalável",
+    "apresentacao": "TypeScript adiciona tipagem estática ao JavaScript, prevenindo erros e aumentando a escalabilidade.",
+    "exemplo": "\ninterface ButtonProps {\n  label: string;\n  onClick: () => void;\n}\nconst Button = ({ label, onClick }: ButtonProps) => (\n  <button onClick={onClick}>{label}</button>\n);",
+    "explicacao": "A tipagem estática ajuda a reduzir bugs, facilita manutenção em grandes projetos e melhora a experiência de desenvolvimento com auto-complete e verificação em tempo de compilação.",
+    "vantagens": [
+      "Reduz erros de runtime",
+      "Melhora a experiência de desenvolvimento",
+      "Facilita manutenção e escalabilidade do código"
+    ],
+    "quandoUsar": "Sempre que o projeto for grande, tiver equipe ou exigir segurança de tipos para reduzir bugs.",
+    "dicas": [
+      "Defina interfaces ou types para props de componentes",
+      "Use tipagem em funções assíncronas e retorno de API para maior segurança"
+    ]
+  },
+  {
+    "titulo": "Comunidade Ativa e Popularidade",
+    "apresentacao": "React e Next.js possuem uma das maiores comunidades do mundo frontend.",
+    "exemplo": "\nNão há código específico,\nmas existem milhares de pacotes npm, tutoriais,\ncursos, exemplos e suporte de grandes empresas.",
+    "explicacao": "Uma comunidade ativa significa fácil acesso a soluções, bibliotecas prontas, suporte e constante evolução do ecossistema, além de amplo mercado de trabalho.",
+    "vantagens": [
+      "Fácil encontrar soluções para problemas",
+      "Grande quantidade de bibliotecas prontas",
+      "Suporte ativo e constante evolução do ecossistema"
+    ],
+    "quandoUsar": "Sempre que quiser aproveitar pacotes prontos ou buscar soluções em fóruns e tutoriais.",
+    "dicas": [
+      "Participe da comunidade para aprender boas práticas",
+      "Acompanhe atualizações do React/Next.js para manter projetos modernos"
+    ]
+  }
+]

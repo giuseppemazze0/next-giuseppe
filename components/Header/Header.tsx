@@ -15,7 +15,7 @@ export default function Header() {
     function ocultarMenuBurguer() {
         setTimeout(() => {
             setBurguer(false)
-        }, 400)
+        }, 1000)
     }
 
 
@@ -33,7 +33,7 @@ export default function Header() {
                 <ul className="flex flex-col justify-center items-left gap-[10px] w-screen px-[20px] text-[2.4em]">
                     <li><Link onClick={() => ocultarMenuBurguer()} href="/intro">Intro</Link></li>
                     <li><Link onClick={() => ocultarMenuBurguer()} href="/sobre">Sobre</Link></li>
-                    <li><Link onClick={() => ocultarMenuBurguer()} href="/caracteristicas">Caracteristicas</Link></li>
+                    <li><Link onClick={() => ocultarMenuBurguer()} href="/caracteristicas">Características</Link></li>
                     <li><Link onClick={() => ocultarMenuBurguer()} href="/tecnologias">Tecnologias</Link></li>
                     <li><Link onClick={() => ocultarMenuBurguer()} href="/projetos">Projetos</Link></li>
                     <li><Link onClick={() => ocultarMenuBurguer()} href="/contador">Contador</Link></li>

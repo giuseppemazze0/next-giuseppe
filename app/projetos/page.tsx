@@ -1,4 +1,4 @@
-import DescricaoProjetos from '@/components/DescricaoProjetos/DescricaoProjetos'
+import DescricaoProjetos from '@/components/Projeto/DescricaoProjetos'
 
 export default function ProjetosPage() {
     return <DescricaoProjetos/>

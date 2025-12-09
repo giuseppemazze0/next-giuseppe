@@ -1,7 +1,5 @@
-import Caracteristica from "@/components/Caracteristica/Caracteristica"
+import CaracteristicaDetailsCard from "@/components/Caracteristicas/DetailsCard"
 
 export default function CaracteristicaPage() {
-    return (
-        <Caracteristica/>
-    )
+    return <CaracteristicaDetailsCard/>
 }

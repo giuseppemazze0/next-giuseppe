@@ -10,11 +10,8 @@ export default function Relogio() {
             setHora(new Date());
         }, 1000);
 
-
         return () => clearInterval(intervalo);
     }, []);
-
-
 
     return (
         <div className="flex flex-col items-center not-italic">            
