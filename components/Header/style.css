@@ -1,0 +1,36 @@
+.nav-links a {
+  display: block;
+  width: 100vw;
+}
+.nav-links li:hover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-links li { 
+    position: relative;
+    transition: color .8s ease-in-out;
+  }
+  .nav-links li::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: 25px;
+    left: -4px;
+    width: 0;
+    height: 50%;
+    background-color: var(--fundo-nav-li);
+    transition: width .6s ease-in-out;
+  }
+
+  .nav-links li:hover {
+    color: var(--cor-letra-nav-li);
+  }
+  .nav-links li:hover::after {
+    width: calc(100% + 8px);
+  }
+  .nav-links a {
+    position: relative;
+    z-index: 1;
+  }  
+}

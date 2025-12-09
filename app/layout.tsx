@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Link from "next/link";
-import Relogio from "@/components/Relogio/Relogio";
+
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
 
 export const metadata: Metadata = {
   title: "Giuseppe Mazzeo",
@@ -13,41 +14,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const data = new Date();
 
   return (
     <html lang="pt-br">
       <body className='h-screen flex flex-col justify-between items-center'>
         
-        <header className="flex flex-col items-center mt-[10px] mb-[30px]">
-          <h1 className="mb-[10px] font-bold text-center text-[2em]">
-            A minha App React & Next.js!
-          </h1>
-          <nav>
-            <ul className="nav-links flex flex-wrap justify-center gap-10 px-[20px]">
-              <li><Link href="/">Intro</Link></li>
-              <li><Link href="/sobre">Sobre</Link></li>
-              <li><Link href="/caracteristicas">Caracteristicas</Link></li>
-              <li><Link href="/tecnologias">Tecnologias</Link></li>
-              <li><Link href="/projetos">Projetos</Link></li>
-              <li><Link href="/contador">Contador</Link></li>
-              <li><Link href="/input">Input</Link></li>
-            </ul>
-          </nav>
-        </header>
+        <Header/>
 
-        <main className="w-[600px] p-[30px] my-[10px] rounded-[10px] shadow-[5px_5px_6px_rgba(0,0,0,0.2)]">
+        <main className="w-[600px] p-[30px] mt-[90px] mb-[30px] rounded-[10px] shadow-[5px_5px_6px_rgba(0,0,0,0.2)]">
           {children}
         </main>
 
-        <footer className="flex justify-between items-end font-bold w-[600px] px-[10px] py-[20px] italic text-[.7em]">
-          <p>Universidade Lusófona © {data.getFullYear()}</p>
-          <div className="flex flex-col items-center">
-            <Relogio />
-            <p>Desenvolvimento de Interfaces Web</p>
-          </div>
-          <p>Giuseppe Mazzeo</p>
-        </footer>
+        <Footer/>
       </body>
     </html>
   );

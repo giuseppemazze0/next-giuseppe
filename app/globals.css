@@ -17,7 +17,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: rgba(128, 128, 128, 0.189);
+    --background: #E7E7E7;
     --foreground: black;
     --fundo-main: #ffffff;
     --fundo-nav-li: #ffffff;
@@ -33,6 +33,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+header {
+  background-color: var(--background);
+}
+
+.nav-links {
+  background-color: var(--background);
+}
+
 main {
   background-color: var(--fundo-main);
 }
@@ -45,45 +53,51 @@ h2 {
 
 
 
-.nav-links li { 
-  position: relative;
-  transition: color .8s ease-in-out;
-}
-.nav-links li::after {
-  content: '';
-  position: absolute;
-  z-index: 0;
-  top: -3px;
-  left: -4px;
-  width: 0;
-  height: calc(100% + 6px);
-  background-color: var(--fundo-nav-li);
-  transition: width .6s ease-in-out;
+
+
+:root {
+    --largura: .5em;
+    --altura: 3em;
 }
 
-.nav-links li:hover {
-  color: var(--cor-letra-nav-li);
-}
-.nav-links li:hover::after {
-  width: calc(100% + 8px);
-}
-.nav-links a {
-  position: relative;
-  z-index: 1;
+@keyframes animacao-letra-d {
+    0% { transform: rotate(-45deg); }
+    100% { transform: rotate(315deg); }
 }
 
 
-
-.conteudo-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.letra-d {
+    overflow: hidden;
+    position: absolute;
+    top: 22px;
+    left: 4.5px;
+    display: inline-block;
+    width: var(--altura);
+    height: var(--altura);
 }
-.conteudo-main h2 {
-  font-size: 1.5em;
-  margin-bottom: 30px;
+.letra-d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--largura);
+    height: var(--altura);
+    background-color: black;
+}
+.letra-d::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -9px;
+    width: var(--altura);
+    height: var(--altura);
+    border: var(--largura) solid black;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    transform: rotate(-45deg);
 }
 
-.paragrafo-main {
-  text-indent: 20px;
+.container-home-page:hover .letra-d::after {
+    animation: animacao-letra-d 1s 1 ease-in-out;
 }
