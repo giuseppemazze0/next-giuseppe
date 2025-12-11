@@ -25,7 +25,7 @@ export default function Header() {
 
     return (
         <header className='fixed z-[10] flex justify-between items-center w-screen h-[90px] pl-[20px] pr-[35px]'>
-            <Link onClick={() => ocultarMenuBurguer()} href='\' className='relative z-[1] w-[60px] h-[60px]'>
+            <Link onClick={() => ocultarMenuBurguer()} href='\' className='relative z-[1] w-[60px] h-[60px] hover:scale-110 transition-transform'>
                 <Image src="/mascote-react/mascote-react-miniatura.png" alt="Mascote react em miniatura" fill style={{objectFit: 'contain'}}></Image>
             </Link>
 
@@ -38,6 +38,7 @@ export default function Header() {
                     <li><Link onClick={() => ocultarMenuBurguer()} href="/projetos">Projetos</Link></li>
                     <li><Link onClick={() => ocultarMenuBurguer()} href="/contador">Contador</Link></li>
                     <li><Link onClick={() => ocultarMenuBurguer()} href="/input">Input</Link></li>
+                    <li><Link onClick={() => ocultarMenuBurguer()} href="/produtos">Loja DEISIshop</Link></li>
                 </ul>
             </nav>
 

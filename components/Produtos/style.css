@@ -1,0 +1,28 @@
+.produto::after,
+.produto::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    bottom: -60px;
+    width: calc(100% + 20px);
+    height: 60px;
+    background-color: rgb(0, 0, 255, 0.3);
+    transition: all .3s ease-in-out;
+}
+
+.produto::after {
+    left: -10px;
+    bottom: -60px;
+}
+.produto:hover::after {
+    transform: translateY(-27px) rotate(-9deg);
+}
+
+.produto::before {
+    z-index: 1;
+    top: -60px;
+    left: -10px;
+}
+.produto:hover::before {
+    transform: translateY(48px) rotate(-5deg);
+}
