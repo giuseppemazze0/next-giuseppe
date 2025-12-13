@@ -8,6 +8,7 @@
     height: 60px;
     background-color: rgb(0, 0, 255, 0.3);
     transition: all .3s ease-in-out;
+    transition-delay: .9s;
 }
 
 .produto::after {

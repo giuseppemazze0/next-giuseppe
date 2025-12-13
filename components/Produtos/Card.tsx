@@ -12,7 +12,7 @@ interface CardProps {
 
 export default function Card({produto, url_api, index}: CardProps) {
     return (
-        <Link href={`/produtos/${index}`} className='produto overflow-hidden relative flex flex-col justify-center items-center w-[170px] px-[2px] border-y-[1px] border-blue-300'>
+        <Link href={`/produtos/${index}`} className='produto overflow-hidden relative flex flex-col justify-center items-center w-[170px] px-[2px] border-y-[2px] border-transparent hover:border-blue-300 duration-500'>
             <h2 className='z-[2] h-[40px] font-medium text-center'>
                 {produto.title}
             </h2>
