@@ -106,8 +106,8 @@ main {
 }
 
 :root {
-    --largura: .5em;
-    --altura: 3em;
+    --largura: .3em;
+    --altura: 2.8em;
 }
 
 @keyframes animacao-letra-d {
@@ -118,8 +118,8 @@ main {
 .letra-d {
     overflow: hidden;
     position: absolute;
-    top: 22px;
-    left: 4.5px;
+    top: 29.5px;
+    left: 6px;
     display: inline-block;
     width: var(--altura);
     height: var(--altura);
