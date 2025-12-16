@@ -5,6 +5,7 @@ import useSWR from "swr"
 import Image from "next/image"
 import Link from "next/link"
 import { Produto } from "@/models/interfaces"
+import { useEffect, useState } from "react"
 
 
 
@@ -15,6 +16,26 @@ export default function DetailsCard() {
     const index = Number(params.produto) + 1
     const url = 'https://deisishop.pythonanywhere.com'
     const url_produto = `${url}/products/${index}`
+    const [produtosFiltrados, setProdutosFiltrados] = useState<Produto[]>(() => {
+        const produtosFiltradosStored = localStorage.getItem('produtosFiltrados')
+        return produtosFiltradosStored ? JSON.parse(produtosFiltradosStored) : []
+    })
+    const [carrinho, setCarrinho] = useState<Produto[]>(() => {
+        const carrinhoStored = localStorage.getItem('carrinho')
+        return carrinhoStored ? JSON.parse(carrinhoStored) : []
+    })
+
+    function adicionar(pIndex: number) {
+        const produto = produtosFiltrados.find(p => p.id === pIndex)
+        
+        if (!produto) return
+
+        setCarrinho(prev => [...prev, produto])
+    }
+
+    useEffect(() => {
+        localStorage.setItem("carrinho", JSON.stringify(carrinho))
+    }, [carrinho])
 
     const {data, error, isLoading} = useSWR<Produto>(url_produto, fetcher)
 
@@ -76,7 +97,7 @@ export default function DetailsCard() {
                         </span>
                     </div>
 
-                    <button className="py-[7px] rounded-[4px] bg-blue-500">
+                    <button onClick={() => adicionar(index)} className="cursor-pointer py-[7px] rounded-[4px] bg-blue-500 hover:bg-blue-400">
                         Adicionar ao Cesto
                     </button>
                 </div>

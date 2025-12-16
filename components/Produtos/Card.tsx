@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Produto } from '@/models/interfaces'
 import './style.css'
-import { useEffect, useState } from 'react'
 
 interface CardProps {
     produto: Produto,
