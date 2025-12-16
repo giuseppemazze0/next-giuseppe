@@ -7,10 +7,12 @@ interface ContadorLikeProps {
 }
 
 export default function TecnologiaContadorLike({title}: ContadorLikeProps) {
-    const [like, setLike] = useState<number>(() => {
+    const [like, setLike] = useState<number>(0)
+
+    useEffect(() => {
         const likeStorage = localStorage.getItem(`likes-${title}`)
-        return (likeStorage) ? JSON.parse(likeStorage) : 0
-    })
+        if (likeStorage) setLike(JSON.parse(likeStorage))
+    }, [title])
 
     function mostrarLike() {
         return (like !== 0) ? like : ''

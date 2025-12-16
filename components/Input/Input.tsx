@@ -15,11 +15,17 @@ export default function Input() {
     const [texto, setTexto] = useState<string>('')
     const [corFundo, setCorFundo] = useState<string>('')
     const [visivel, setVisivel] = useState<boolean>(false)
-    const [tarefas, setTarefas] = useState<Tarefa[]>(() => {
-        const tarefasStored = localStorage.getItem('tarefas')
-        return (tarefasStored) ? JSON.parse(tarefasStored) : []
-    })
+    const [tarefas, setTarefas] = useState<Tarefa[]>([])
     const [idTarefa, setIdTarefa] = useState<number>(tarefas.length)
+
+    useEffect(() => {
+        const tarefasStored = localStorage.getItem('tarefas')
+        if (tarefasStored) {
+            const tarefasParsed: Tarefa[] = JSON.parse(tarefasStored)
+            setTarefas(tarefasParsed)
+            setIdTarefa(tarefasParsed.length)
+        }
+    }, [])
 
 
     function alterarCorFundo(e: any) {

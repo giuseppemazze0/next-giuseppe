@@ -9,15 +9,17 @@ interface HistoricoContador {
 }
 
 export default function Contador() {
-    const [contador, setContador] = useState<number>(() => {
-        const contadorStored = localStorage.getItem('contador')
-        return contadorStored ? Number(contadorStored) : 0
-    })
+    const [contador, setContador] = useState<number>(0)
+    const [historico, setHistorico] = useState<HistoricoContador[]>([])
+
+    useEffect(() => {
+    const contadorStored = localStorage.getItem('contador')
+    if (contadorStored) setContador(Number(contadorStored))
+
+    const historicoStored = localStorage.getItem('historico')
+    if (historicoStored) setHistorico(JSON.parse(historicoStored))
+    }, [])
     const [corFundo, setCorFundo] = useState<string>('')
-    const [historico, setHistorico] = useState<HistoricoContador[]>(() => {
-        const historicoStored = localStorage.getItem('historico')
-        return (historicoStored) ? JSON.parse(historicoStored) : []
-    })
     const limiteMin = 0
     const limiteMax = 10
 

@@ -6,10 +6,12 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export default function Header() {
-    const [burguer, setBurguer] = useState<boolean>(() => {
-        const burguerStored = localStorage.getItem('burguer')
-        return burguerStored ? JSON.parse(burguerStored) : false
-    });
+    const [burguer, setBurguer] = useState<boolean>(false);
+
+    useEffect(() => {
+    const burguerStored = localStorage.getItem('burguer');
+    if (burguerStored) setBurguer(JSON.parse(burguerStored));
+    }, []);
 
 
     function ocultarMenuBurguer() {
