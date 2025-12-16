@@ -121,8 +121,8 @@ export default function Carrinho() {
             </div>
 
             <div className="flex flex-col p-[10px] mt-[50px] bg-green-100 text-center">
-                <span>Falta pagar { dadosCompra.totalCost } €</span>
-                <span>Referência: { dadosCompra.reference }</span>
+                <span>Falta pagar {dadosCompra?.totalCost ?? 0} €</span>
+                <span>Referência: {dadosCompra?.reference ?? '—'}</span>
             </div>
         </>
     )
