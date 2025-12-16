@@ -18,26 +18,28 @@ interface DadosCompra {
 const url_api = "https://deisishop.pythonanywhere.com"
 
 export default function Carrinho() {    
-    const [carrinho, setCarrinho] = useState<Produto[]>(() => {
-        const carrinhoStored = localStorage.getItem('carrinho')
-        return carrinhoStored ? JSON.parse(carrinhoStored) : []
-    })
-    const [estudanteDEISI, setEstudanteDEISI] = useState<boolean>(() => {
-        const estudanteDEISIStored = localStorage.getItem('estudanteDEISI')
-        return estudanteDEISIStored ? JSON.parse(estudanteDEISIStored) : false
-    })
-    const [nomeEstudante, setNomeEstudante] = useState<string>(() => {
-        const nomeEstudanteStored = localStorage.getItem('nomeEstudante')
-        return nomeEstudanteStored ? JSON.parse(nomeEstudanteStored) : ""
-    })
-    const [cupom, setCupom] = useState<string>(() => {
-        const cupomStored = localStorage.getItem('cupom')
-        return cupomStored ? JSON.parse(cupomStored) : ""
-    })
-    const [dadosCompra, setDadosCompra] = useState<DadosCompra>(() => {
-        const dadosCompraStored = localStorage.getItem('dadosCompra')
-        return dadosCompraStored ? JSON.parse(dadosCompraStored) : null
-    })
+    const [carrinho, setCarrinho] = useState<Produto[]>([])
+    const [estudanteDEISI, setEstudanteDEISI] = useState<boolean>(false)
+    const [nomeEstudante, setNomeEstudante] = useState<string>("")
+    const [cupom, setCupom] = useState<string>("")
+    const [dadosCompra, setDadosCompra] = useState<DadosCompra | null>(null)
+
+    useEffect(() => {
+    const carrinhoStored = localStorage.getItem('carrinho')
+    if (carrinhoStored) setCarrinho(JSON.parse(carrinhoStored))
+
+    const estudanteDEISIStored = localStorage.getItem('estudanteDEISI')
+    if (estudanteDEISIStored) setEstudanteDEISI(JSON.parse(estudanteDEISIStored))
+
+    const nomeEstudanteStored = localStorage.getItem('nomeEstudante')
+    if (nomeEstudanteStored) setNomeEstudante(JSON.parse(nomeEstudanteStored))
+
+    const cupomStored = localStorage.getItem('cupom')
+    if (cupomStored) setCupom(JSON.parse(cupomStored))
+
+    const dadosCompraStored = localStorage.getItem('dadosCompra')
+    if (dadosCompraStored) setDadosCompra(JSON.parse(dadosCompraStored))
+    }, [])
 
     const total = carrinho.reduce((soma, produto) => {
         return soma + Number(produto.price)

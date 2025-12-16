@@ -9,14 +9,16 @@ interface PesquisaProps {
 }
 
 export default function Pesquisa({produtos, onFiltrar}: PesquisaProps) {
-    const [tipoCategoria, setTipoCategoria] = useState<string>(() => {
-        const tipoCategoriaStored = localStorage.getItem('tipoCategoria')
-        return tipoCategoriaStored ? JSON.parse(tipoCategoriaStored) : ""
-    })
-    const [pesquisa, setPesquisa] = useState<string>(() => {
-        const pesquisaStored = localStorage.getItem('pesquisa')
-        return pesquisaStored ? JSON.parse(pesquisaStored) : ''
-    })
+    const [tipoCategoria, setTipoCategoria] = useState<string>("")
+    const [pesquisa, setPesquisa] = useState<string>("")
+
+    useEffect(() => {
+    const tipoCategoriaStored = localStorage.getItem('tipoCategoria')
+    if (tipoCategoriaStored) setTipoCategoria(JSON.parse(tipoCategoriaStored))
+
+    const pesquisaStored = localStorage.getItem('pesquisa')
+    if (pesquisaStored) setPesquisa(JSON.parse(pesquisaStored))
+    }, [])
 
     function pesquisar(texto: string) {
         const produtosFiltrados = produtos.filter((produto) =>

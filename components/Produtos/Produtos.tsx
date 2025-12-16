@@ -17,14 +17,16 @@ const fetcher = async (url: string) => fetch(url).then(res => res.json())
 
 export default function Produtos() {
     const {data, error, isLoading} = useSWR<Produto[]>(url_api_produtos, fetcher)
-    const [carrinho, setCarrinho] = useState<Produto[]>(() => {
-        const carrinhoStored = localStorage.getItem('carrinho')
-        return carrinhoStored ? JSON.parse(carrinhoStored) : []
-    })
-    const [produtosFiltrados, setProdutosFiltrados] = useState<Produto[]>(() => {
-        const produtosFiltradosStored = localStorage.getItem('produtosFiltrados')
-        return produtosFiltradosStored ? JSON.parse(produtosFiltradosStored) : []
-    })
+    const [carrinho, setCarrinho] = useState<Produto[]>([])
+    const [produtosFiltrados, setProdutosFiltrados] = useState<Produto[]>([])
+
+    useEffect(() => {
+    const carrinhoStored = localStorage.getItem('carrinho')
+    if (carrinhoStored) setCarrinho(JSON.parse(carrinhoStored))
+
+    const produtosFiltradosStored = localStorage.getItem('produtosFiltrados')
+    if (produtosFiltradosStored) setProdutosFiltrados(JSON.parse(produtosFiltradosStored))
+    }, [])
 
     const produtos = data ? [... data] : []
 

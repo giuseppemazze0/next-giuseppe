@@ -16,14 +16,16 @@ export default function DetailsCard() {
     const index = Number(params.produto) + 1
     const url = 'https://deisishop.pythonanywhere.com'
     const url_produto = `${url}/products/${index}`
-    const [produtosFiltrados, setProdutosFiltrados] = useState<Produto[]>(() => {
-        const produtosFiltradosStored = localStorage.getItem('produtosFiltrados')
-        return produtosFiltradosStored ? JSON.parse(produtosFiltradosStored) : []
-    })
-    const [carrinho, setCarrinho] = useState<Produto[]>(() => {
-        const carrinhoStored = localStorage.getItem('carrinho')
-        return carrinhoStored ? JSON.parse(carrinhoStored) : []
-    })
+    const [produtosFiltrados, setProdutosFiltrados] = useState<Produto[]>([])
+    const [carrinho, setCarrinho] = useState<Produto[]>([])
+
+    useEffect(() => {
+    const produtosFiltradosStored = localStorage.getItem('produtosFiltrados')
+    if (produtosFiltradosStored) setProdutosFiltrados(JSON.parse(produtosFiltradosStored))
+
+    const carrinhoStored = localStorage.getItem('carrinho')
+    if (carrinhoStored) setCarrinho(JSON.parse(carrinhoStored))
+    }, [])
 
     function adicionar(pIndex: number) {
         const produto = produtosFiltrados.find(p => p.id === pIndex)
